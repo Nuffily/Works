@@ -95,18 +95,19 @@ int main() {
 
     int l = 0;
     int r = 10000000;
-    int m;
+    int median;
+
 
     // С помощью бинарного поиска ищем максимальное число кружек, которое возможно перевести
     // Выбираем число кружек, и ищем наибыстрейший путь с помощью алгоритма Дейскстры
     do {    
-        m = (r + l) / 2 + 1;
+        median = (r + l) / 2 + 1;
 
-        if (base.dijkstra(1, n, m) > TIMEBOUND) { 
-            r = m-1;
+        if (base.dijkstra(1, n, median) > TIMEBOUND) {
+            r = median -1;
         }
         else {
-            l = m;
+            l = median;
         }
 
     } while (l != r);
