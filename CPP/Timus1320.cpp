@@ -76,7 +76,7 @@ int main() {
 
     bool answer = true;
 
-    for (int i = 1; i < 1001; i++) {
+    for (int i = 1; i < MAX_ROOTS + 1; i++) {
         if (!check[i])
             if (graph.bfs(i) % 4) answer = false;
     }
